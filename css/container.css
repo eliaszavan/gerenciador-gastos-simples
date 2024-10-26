@@ -1,0 +1,113 @@
+main {
+    max-width: 700px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .resume {
+    display: flex;
+    padding: 20px 0;
+    gap: 40px;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .resume>div {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    background-color: var(--dark2);
+    border-radius: 10px;
+    padding: 10px;
+    width: 180px;
+  }
+  
+  .newItem {
+    display: flex;
+    gap: 10px;
+    align-items: end;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .columnAction > button {
+    cursor: pointer; 
+    color: var(--red);
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+  }
+  
+  .columnAction>button:hover {
+    color: var(--red2);
+  }
+  
+  .divDesc,
+  .divTime,
+  .divAmount {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .newItem>button {
+    background-color: var(--dark3);
+    color: var(--white);
+    padding: 0 12px;
+    cursor: pointer;
+    height: 34px;
+  
+  }
+  
+  .newItem>button:hover {
+    background: var(--dark2);
+    transition: all 0.3s
+  }
+  
+  input,
+  select {
+    padding: 5px;
+  }
+  
+  .divTable {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  
+  table {
+    width: 100%;
+    padding: 30px 0;
+    border-radius: 5px;
+  }
+  
+  th {
+    text-align: start;
+    border-bottom: inset;
+    padding-bottom: 5px;
+  }
+  
+  i {
+    font-size: 25px;
+  }
+  
+  .columnAction {
+    width: 40px;
+    text-align: center;
+  }
+  
+  .columnAction>button {
+    background: transparent;
+    border: none;
+  }
+  
+  .columnAmount {
+    width: 30%;
+  }
+  
+  .columnTime {
+    width: 100px;
+    text-align: center;
+  }

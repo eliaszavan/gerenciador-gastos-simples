@@ -9,6 +9,44 @@ const quantity = document.querySelector(".quantity");
 
 let items;
 
+function enableAlert(event, text, type) {
+  event.preventDefault();
+  let backgroundColor = "";
+  let textColor = "";
+  switch(type) {
+    case "error":
+      backgroundColor = "rgb(190, 55, 45)";
+      textColor = "#fcfcfc";
+      break;
+    case "warn":
+      backgroundColor = "rgb(214, 200, 3)";
+      textColor = "#0e0e0e";
+      break;
+    case "sucess":
+      backgroundColor = "rgb(1, 131, 88)";
+      textColor = "#fcfcfc";
+      break;
+    default:
+      backgroundColor = "rgba(0, 0, 0, 0.5)";
+      textColor = "#fcfcfc";
+      break
+  }
+  const divAlert = document.querySelector(".alert");
+
+  const divMessageVerify = document.querySelector(".message");
+  if (divMessageVerify != null) divMessageVerify.remove();
+  const message = document.createElement("div");
+  message.classList.add("message");
+  message.style.backgroundColor = backgroundColor;
+  message.style.color = textColor;
+
+  message.innerText = text;
+  divAlert.appendChild(message);
+  setTimeout(() => {
+      message.remove();
+  }, 1500);
+}
+
 function formatNumber(number) {
   return new Intl.NumberFormat('pt-BR', {
     minimumFractionDigits: 2,
@@ -31,9 +69,9 @@ function formatDate(date) {
   return formattedDate;
 }
 
-btnNew.onclick = () => {
+btnNew.onclick = (event) => {
   if (descItem.value === "" || amount.value === "" || time.value === "") {
-    return alert("Preencha todos os campos!");
+    return enableAlert(event, "Preencha todos os campos!", "error");
   }
 
   items.push({
@@ -45,6 +83,7 @@ btnNew.onclick = () => {
   setItensBD();
 
   loadItens();
+  enableAlert(event, "Produto adicionado com êxito.", "sucess");
 
   descItem.value = "";
   amount.value = "";

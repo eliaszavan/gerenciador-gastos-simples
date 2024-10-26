@@ -5,7 +5,8 @@
     --white: #FEFFFE;
     --green: rgb(103, 195, 80);
     --green2: rgb(51, 149, 26);
-    --red: rgb(190, 55, 45);
+    --green3: rgb(75, 233, 36);
+    --red: rgb(177, 46, 37);
     --red2: rgb(156, 26, 26);
 }
 
@@ -19,9 +20,15 @@
 
 body {
   height: 100vh;
-  display: flex;
-  justify-content: center;
   background-color: var(--dark);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  margin-bottom: 200px;
 }
 
 p, th, label, span, div {
@@ -36,124 +43,9 @@ h1 {
   color: var(--white);
   margin: 0;
   padding: 20px;
-  transition: transform 0.3s ease-in-out;
+  transition: color 0.7s;
 }
 
 h1:hover {
-  transform: scale(1.1);
-}
-
-
-main {
-  max-width: 700px;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.resume {
-  display: flex;
-  padding: 20px 0;
-  gap: 40px;
-  width: 100%;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.resume>div {
-  display: flex;
-  text-align: center;
-  flex-direction: column;
-  background-color: var(--dark2);
-  border-radius: 10px;
-  padding: 10px;
-  width: 180px;
-}
-
-.newItem {
-  display: flex;
-  gap: 10px;
-  align-items: end;
-  width: 100%;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.columnAction > button {
-  cursor: pointer; 
-  color: var(--red2);
-  -webkit-transition-duration: 0.4s;
-  transition-duration: 0.4s;
-}
-
-.columnAction>button:hover {
-  color: var(--red);
-}
-
-.divDesc,
-.divTime,
-.divAmount {
-  display: flex;
-  flex-direction: column;
-}
-
-.newItem>button {
-  background-color: var(--dark3);
-  color: var(--white);
-  padding: 0 12px;
-  cursor: pointer;
-  height: 34px;
-
-}
-
-.newItem>button:hover {
-  background: var(--dark2);
-  transition: all 0.3s
-}
-
-input,
-select {
-  padding: 5px;
-}
-
-.divTable {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-
-table {
-  width: 100%;
-  padding: 30px 0;
-  border-radius: 5px;
-}
-
-th {
-  text-align: start;
-  border-bottom: inset;
-  padding-bottom: 5px;
-}
-
-i {
-  font-size: 25px;
-}
-
-.columnAction {
-  width: 40px;
-  text-align: center;
-}
-
-.columnAction>button {
-  background: transparent;
-  border: none;
-}
-
-.columnAmount {
-  width: 30%;
-}
-
-.columnTime {
-  width: 100px;
-  text-align: center;
+  color: var(--green3);
 }

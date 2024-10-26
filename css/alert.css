@@ -1,0 +1,44 @@
+.message {
+    padding: 20px 60px;
+    position: fixed;
+    top: 100px;
+    right: 20px;
+    background-color: #353434;
+    border-radius: 2px;
+    color: var(--white);
+    font-size: 16px;
+    animation: slideIn 0.3s both;
+  }
+  
+  @keyframes slideIn {
+    0% {
+      transform: translateX(500px);;
+      opacity: 0;
+    }
+  
+    100% {
+      transform: translateX(0px);
+      opacity: 1;
+    }
+  }
+  
+  .message::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 5px;
+    background-color: rgba(0, 0, 0, 0.5);
+    animation: time 1.5s forwards;
+  }
+  
+  @keyframes time {
+    0% {
+      width: 0;
+    }
+  
+    100% {
+      width: 99.8%;
+    }
+  }
