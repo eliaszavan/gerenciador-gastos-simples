@@ -71,23 +71,28 @@ function formatDate(date) {
 
 btnNew.onclick = (event) => {
   if (descItem.value === "" || amount.value === "" || time.value === "") {
-    return enableAlert(event, "Preencha todos os campos!", "error");
-  }
-
-  items.push({
-    desc: descItem.value.toUpperCase(),
-    amount: formatNumber(Math.abs(amount.value.replace("Total: R$", ""))),
-    time: formatDate(time.value),
-  });
-
-  setItensBD();
-
-  loadItens();
-  enableAlert(event, "Produto adicionado com êxito.", "sucess");
-
-  descItem.value = "";
-  amount.value = "";
-  time.value = "";
+    var brow = navigator.userAgent;
+    if (/mobi/i.test(brow)) {
+      return alert('Mobile Browser');
+    } else {
+      return enableAlert(event, "Preencha todos os campos!", "error");
+    }
+  }else {
+    items.push({
+      desc: descItem.value.toUpperCase(),
+      amount: formatNumber(Math.abs(amount.value.replace("Total: R$", ""))),
+      time: formatDate(time.value),
+    });
+  
+    setItensBD();
+  
+    loadItens();
+    enableAlert(event, "Produto adicionado com êxito.", "sucess");
+  
+    descItem.value = "";
+    amount.value = "";
+    time.value = "";
+  }  
 };
 
 function deleteItem(index) {
