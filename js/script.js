@@ -48,7 +48,7 @@ function enableAlert(event, text, type) {
 }
 
 function formatNumber(number) {
-  return new Intl.NumberFormat('pt-BR', {
+  return new Intl.NumberFormat('en-US', {
     minimumFractionDigits: 2,
     maximumFractionDigits: 2
   }).format(number);
@@ -75,19 +75,19 @@ btnNew.onclick = (event) => {
     if (/mobi/i.test(brow)) {
       return alert('Mobile Browser');
     } else {
-      return enableAlert(event, "Preencha todos os campos!", "error");
+      return enableAlert(event, "Fill in all fields!", "error");
     }
   }else {
     items.push({
       desc: descItem.value.toUpperCase(),
-      amount: formatNumber(Math.abs(amount.value.replace("Total: R$", ""))),
+      amount: formatNumber(Math.abs(amount.value.replace("Total: $", ""))),
       time: formatDate(time.value),
     });
   
     setItensBD();
   
     loadItens();
-    enableAlert(event, "Produto adicionado com êxito.", "sucess");
+    enableAlert(event, "Purchase added.", "sucess");
   
     descItem.value = "";
     amount.value = "";
@@ -134,8 +134,8 @@ function getTotals() {
     payments = payments + 1;
   });
 
-  total.innerHTML = "Total: R$" + formatNumber(amountItems);
-  quantity.innerHTML = "Compras: " + payments;
+  total.innerHTML = "Total: $" + formatNumber(amountItems);
+  quantity.innerHTML = "Purchases: " + payments;
 }
 
 const getItensBD = () => JSON.parse(localStorage.getItem("db_items")) ?? [];
